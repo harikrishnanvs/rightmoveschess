@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Achievements</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Coach Achievements</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
+
+<section class="section gallery">
+    <img src="/static/images/chess_coin_1.jpg" alt="Coach Achievement">
+    <img src="/static/images/coach9.jpg" alt="Tournament Win">
+    <img src="/static/images/chess_coin_2.jpg" alt="Chess Award">
+    <br>
+    <img src="/static/images/chess_coin_1.jpg" alt="Coach Achievement">
+    <img src="/static/images/coach8.jpg" alt="Tournament Win">
+    <img src="/static/images/chess_coin_2.jpg" alt="Chess Award">
+    <br>
+    <img src="/static/images/chess_coin_1.jpg" alt="Coach Achievement">
+    <img src="/static/images/coach7.jpg" alt="Tournament Win">
+    <img src="/static/images/chess_coin_2.jpg" alt="Chess Award">
+    <br>
+    <img src="/static/images/chess_coin_1.jpg" alt="Coach Achievement">
+    <img src="/static/images/coach6.jpg" alt="Tournament Win">
+    <img src="/static/images/chess_coin_2.jpg" alt="Chess Award">
+    <br>
+    <img src="/static/images/chess_coin_1.jpg" alt="Coach Achievement">
+    <img src="/static/images/coach3.jpg" alt="Tournament Win">
+    <img src="/static/images/chess_coin_2.jpg" alt="Chess Award">
+    
+</section>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <span class="close">&times;</span>
+    <img id="popup-img">
+</div>
+
+<script>
+    const images = document.querySelectorAll('.Tournament Win');
+    // const images = document.querySelectorAll('.gallery img');
+
+    // Popup elements
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.querySelector('.close');
+
+    // Open popup on image click
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            popup.style.display = 'block';
+            popupImg.src = img.src;
+        });
+    });
+
+    // Close popup using X button
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    // Close popup when clicking outside image
+    popup.addEventListener('click', (e) => {
+        if (e.target !== popupImg) {
+            popup.style.display = 'none';
+        }
+    });
+</script>
+<footer>
+    © 2026 Right Moves Chess School • Excellence in Every Game ♟
+</footer>
+
+</body>
+</html>
+
